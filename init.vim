@@ -79,6 +79,7 @@ Plug 'preservim/nerdcommenter'            " easy commenting
 Plug 'raimondi/delimitmate'               " automatic closing of brackets, quotes, paranthesis etc
 Plug 'tpope/vim-fugitive'                 " git plugin
 Plug 'mbbill/undotree'                    " visualize undo branches
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }   " enable fzf in neovim
 
 "" Language
 
@@ -99,8 +100,12 @@ let mapleader=' '
 let localleader=','
 
 " ----------------------------------------
-" CUSTOM MAPPINGS
+" KEY BINDINGS
 " ----------------------------------------
+"" Insert Mode
+" <esc> remap
+inoremap jk <esc>
+
 "" Normal Mode
 " edit/source vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
@@ -120,12 +125,18 @@ nnoremap <silent> <F5> :let _save_pos=getpos(".") <Bar>
   \:call setpos('.', _save_pos) <Bar>
   \:unlet _save_pos<cr>
 
+" ----------------------------------------
+" PLUGIN KEY BINDINGS
+" ----------------------------------------
+"" undotree
 " toggle undotree
 nnoremap <F4> :UndotreeToggle<cr>
 
-"" Insert Mode
-" <esc> remap
-inoremap jk <esc>
+"" fzf
+" find file under current directory
+nnoremap <leader>f :FZF<cr>
+" find file under $HOME directory
+nnoremap <leader>F :FZF ~<cr>
 
 " ----------------------------------------
 " ABBREVIATIONS
