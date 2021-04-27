@@ -7,3 +7,6 @@ nmap <buffer> P <c-w>z
 nmap <buffer> o <cr>
 " close netrw or open file and close netrw
 nmap <buffer> O <cr>:Lexplore<cr>
+
+" Autocommands
+setlocal bufhidden=wipe  " prevent netrw from creating empty buffers when :set hidden
