@@ -37,6 +37,7 @@ George's personal neovim configuration
 |---|---|
 |`<leader>ev`|edit init.vim|
 |`<leader>rv`|source init.vim|
+|`<F3>`|toggle hidden characters|
 |`<F5>`|remove all trailing whitespaces|
 
 ## Plugin Key Bindings

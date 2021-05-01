@@ -18,9 +18,7 @@ endif
 " EDITOR BEHAVIOR
 " ----------------------------------------
 "" Terminal Aethetics
-" enable 24-bit color terminal support
-set termguicolors
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set termguicolors         " enable 24-bit color terminal support
 
 "" Coding Awareness
 set number                " display line number
@@ -32,7 +30,8 @@ set wrap                  " text wrap
 set linebreak             " prevent wrap inside word
 set lazyredraw            " prevent redrawing screen during macro
 set hidden                " prevent loss of buffer history when switching buffers
-match ErrorMsg '\s\+$'    " highlight trailing whitespaces
+let &showbreak='↪ '       " hidden character to indicate start of wrapped line
+set listchars=tab:│·,eol:↲,nbsp:␣,trail:•,extends:▶,precedes:◀  " set hidden characters
 
 "" Search
 set ignorecase            " not case sensitive
@@ -65,32 +64,37 @@ set directory=/.tmp/swap,~/.config/nvim/.tmp/swap//
 call plug#begin('~/.config/nvim/plugged')
 
 "" Interface
-Plug 'vim-airline/vim-airline'                        " improved status bar
-Plug 'vim-airline/vim-airline-themes'                 " status bar theme
+Plug 'rakr/vim-one'                                             " vim-one theme
+Plug 'vim-airline/vim-airline'                                  " improved status bar
+Plug 'vim-airline/vim-airline-themes'                           " status bar theme
 
 "" Utility
-Plug 'easymotion/vim-easymotion'                      " easier cursor movement
-Plug 'preservim/nerdcommenter'                        " easy commenting
-Plug 'justinmk/vim-dirvish'                           " path navigator
-Plug 'tpope/vim-fugitive'                             " git plugin
-Plug 'mbbill/undotree'                                " visualize undo branches
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }   " enable fzf in neovim
+Plug 'easymotion/vim-easymotion'                                " easier cursor movement
+Plug 'preservim/nerdcommenter'                                  " easy commenting
+Plug 'justinmk/vim-dirvish'                                     " path navigator
+Plug 'tpope/vim-fugitive'                                       " git plugin
+Plug 'mbbill/undotree'                                          " visualize undo branches
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }             " enable fzf in neovim
 
 "" Code Completion
-Plug 'mattn/emmet-vim'                                " HTML & CSS snippets
-Plug 'raimondi/delimitmate'                           " automatic closing of brackets
-Plug 'ervandew/supertab'                              " <tab> to cycle through patterns
+Plug 'mattn/emmet-vim'                                          " HTML & CSS snippets
+Plug 'raimondi/delimitmate'                                     " automatic closing of brackets
+Plug 'ervandew/supertab'                                        " <tab> to cycle through patterns
 Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }   " completion engine
 
 "" Language
-Plug 'pangloss/vim-javascript'                        " JavaScript
-Plug 'maxmellon/vim-jsx-pretty'                       " JSX
+Plug 'pangloss/vim-javascript'                                  " JavaScript
+Plug 'maxmellon/vim-jsx-pretty'                                 " JSX
 
 call plug#end()
 
 " ----------------------------------------
 " PLUGIN CONFIGURATIONS
 " ----------------------------------------
+"" vim-one
+let g:one_allow_italics=1                             " allow italics
+colorscheme one                                       " enable vim-one theme
+
 "" vim-airline
 let g:airline_powerline_fonts=1                       " status line with symbols
 let g:airline#extensions#tabline#enabled=1            " display all buffers at top
@@ -116,6 +120,9 @@ inoremap jk <esc>
 " edit/source vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>rv :source $MYVIMRC<cr>
+
+" toggle hidden characters
+nnoremap <F3> :set list!<cr>
 
 " remove all trailing whitespaces
 nnoremap <silent> <F5> :let _save_pos=getpos(".") <Bar>
