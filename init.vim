@@ -74,13 +74,17 @@ Plug 'vim-airline/vim-airline'                        " improved status bar
 Plug 'vim-airline/vim-airline-themes'                 " status bar theme
 
 "" Utility
-Plug 'mattn/emmet-vim'                                " HTML & CSS snippets
 Plug 'easymotion/vim-easymotion'                      " easier cursor movement
 Plug 'preservim/nerdcommenter'                        " easy commenting
-Plug 'raimondi/delimitmate'                           " automatic closing of brackets
 Plug 'tpope/vim-fugitive'                             " git plugin
 Plug 'mbbill/undotree'                                " visualize undo branches
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }   " enable fzf in neovim
+
+"" Code Completion
+Plug 'mattn/emmet-vim'                                " HTML & CSS snippets
+Plug 'raimondi/delimitmate'                           " automatic closing of brackets
+Plug 'ervandew/supertab'                              " <tab> to cycle through patterns
+Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }   " completion engine
 
 "" Language
 Plug 'pangloss/vim-javascript'                        " JavaScript
@@ -95,6 +99,9 @@ call plug#end()
 let g:airline_powerline_fonts=1                       " status line with symbols
 let g:airline#extensions#tabline#enabled=1            " display all buffers at top
 let g:airline#extensions#tabline#buffer_nr_show=1     " display buffer #
+
+"" deoplete
+let g:deoplete#enable_at_startup=1                    " enable deoplete
 
 " ----------------------------------------
 " LEADER & LOCALLEADER
