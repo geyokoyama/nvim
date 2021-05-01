@@ -83,6 +83,8 @@ Plug 'mbbill/undotree'                                " visualize undo branches
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }   " enable fzf in neovim
 
 "" Language
+Plug 'pangloss/vim-javascript'                        " JavaScript
+Plug 'maxmellon/vim-jsx-pretty'                       " JSX
 
 call plug#end()
 
