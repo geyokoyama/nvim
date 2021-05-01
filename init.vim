@@ -38,11 +38,6 @@ match ErrorMsg '\s\+$'    " highlight trailing whitespaces
 set ignorecase            " not case sensitive
 set smartcase             " override ignorecase when pattern contains uppercase
 
-"" Netrw (./after/ftplugin/netrw.vim)
-let g:netrw_banner=0                            " remove banner
-let g:netrw_liststyle=3                         " tree style
-let g:netrw_winsize=25                          " set netrw size
-
 "" Temporary Files
 " backups
 "if !isdirectory('~/.config/nvim/.tmp/backup')
@@ -76,6 +71,7 @@ Plug 'vim-airline/vim-airline-themes'                 " status bar theme
 "" Utility
 Plug 'easymotion/vim-easymotion'                      " easier cursor movement
 Plug 'preservim/nerdcommenter'                        " easy commenting
+Plug 'justinmk/vim-dirvish'                           " path navigator
 Plug 'tpope/vim-fugitive'                             " git plugin
 Plug 'mbbill/undotree'                                " visualize undo branches
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }   " enable fzf in neovim
@@ -120,10 +116,6 @@ inoremap jk <esc>
 " edit/source vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>rv :source $MYVIMRC<cr>
-
-" open netrw in working/current directory
-nnoremap <leader>dd :Lexplore<cr>
-nnoremap <leader>da :Lexplore %:p:h<cr>
 
 " remove all trailing whitespaces
 nnoremap <silent> <F5> :let _save_pos=getpos(".") <Bar>

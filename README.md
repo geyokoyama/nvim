@@ -8,7 +8,6 @@ George's personal neovim configuration
 * [Key Bindings](#key-bindings)
   - [Insert Mode](#insert-mode)
   - [Normal Mode](#normal-mode)
-  - [Netrw Window](#netrw-window)
 * [Plugin Key Bindings](#plugin-key-bindings)
   - [Text Editing](#text-editing)
     + [undotree](#undotree)
@@ -38,17 +37,7 @@ George's personal neovim configuration
 |---|---|
 |`<leader>ev`|edit init.vim|
 |`<leader>rv`|source init.vim|
-|`<leader>dd`|open **netrw** in working directory or close netrw|
-|`<leader>da`|open **netrw** in current directory|
 |`<F5>`|remove all trailing whitespaces|
-
-### Netrw Window
-|Shortcut|Action|
-|---|---|
-|`.`|toggle hidden files|
-|`Shift`+`P`|close preview window(`p` to open)|
-|`o`|open/close directory or open file|
-|`Shift`+`O`|close netrw or open file and close netrw|
 
 ## Plugin Key Bindings
 ### Text Editing
