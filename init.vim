@@ -30,6 +30,7 @@ set wrap                  " text wrap
 set linebreak             " prevent wrap inside word
 set lazyredraw            " prevent redrawing screen during macro
 set hidden                " prevent loss of buffer history when switching buffers
+set list                  " display hidden characters
 let &showbreak='↪ '       " hidden character to indicate start of wrapped line
 set listchars=tab:│·,eol:↲,nbsp:␣,trail:•,extends:▶,precedes:◀  " set hidden characters
 
@@ -122,17 +123,10 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>rv :source $MYVIMRC<cr>
 
 " toggle hidden characters
-nnoremap <F3> :set list!<cr>
+nnoremap <silent> <F3> :set list!<cr>
 
 " remove all trailing whitespaces
-nnoremap <silent> <F5> :let _save_pos=getpos(".") <Bar>
-  \:let _s=@/ <Bar>
-  \:%s/\s\+$//e <Bar>
-  \:let @/=_s <Bar>
-  \:nohl <Bar>
-  \:unlet _s <Bar>
-  \:call setpos('.', _save_pos) <Bar>
-  \:unlet _save_pos<cr>
+nnoremap <silent> <F5> :call strip_trailing_whitespaces#StripTrailingWhitespaces()<cr>
 
 " ----------------------------------------
 " PLUGIN KEY BINDINGS
@@ -151,4 +145,4 @@ nnoremap <leader>F :FZF ~<cr>
 " ABBREVIATIONS
 " ----------------------------------------
 iabbrev @@ george_y@outlook.com
-iabbrev comcom https://georgeeyokoyama.github.io
+iabbrev comcom https://geyokoyama.github.io
