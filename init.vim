@@ -26,17 +26,14 @@ set expandtab             " tab insert spaces
 set tabstop=2             " # of space characters on tab
 set shiftwidth=2          " # of space characters on indent
 set scrolloff=999         " cursor line is vertically centered
-set wrap                  " text wrap
 set linebreak             " prevent wrap inside word
 set lazyredraw            " prevent redrawing screen during macro
-set hidden                " prevent loss of buffer history when switching buffers
-set list                  " display hidden characters
-let &showbreak='↪ '       " hidden character to indicate start of wrapped line
-set listchars=tab:│·,eol:↲,nbsp:␣,trail:•,extends:▶,precedes:◀  " set hidden characters
-
-"" Search
 set ignorecase            " not case sensitive
 set smartcase             " override ignorecase when pattern contains uppercase
+set hidden                " prevent loss of buffer history when switching buffers
+set list                  " display hidden characters
+let &showbreak='▶▶▶ '     " hidden character to indicate start of wrapped line
+set listchars=tab:│·,eol:↲,nbsp:␣,trail:•,extends:▶,precedes:◀  " set hidden characters
 
 "" Temporary Files
 " backups
@@ -81,11 +78,12 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }             " enable fzf in 
 Plug 'mattn/emmet-vim'                                          " HTML & CSS snippets
 Plug 'raimondi/delimitmate'                                     " automatic closing of brackets
 Plug 'ervandew/supertab'                                        " <tab> to cycle through patterns
-Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }   " completion engine
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }               " completion engine
 
 "" Language
 Plug 'pangloss/vim-javascript'                                  " JavaScript
 Plug 'maxmellon/vim-jsx-pretty'                                 " JSX
+Plug 'kevinoid/vim-jsonc'                                       " JSON
 
 call plug#end()
 
@@ -101,45 +99,62 @@ let g:airline_powerline_fonts=1                       " status line with symbols
 let g:airline#extensions#tabline#enabled=1            " display all buffers at top
 let g:airline#extensions#tabline#buffer_nr_show=1     " display buffer #
 
-"" deoplete
-let g:deoplete#enable_at_startup=1                    " enable deoplete
+"" vim-easymotion
+let g:EasyMotion_do_mapping=0                         " disable default mappings
+let g:EasyMotion_smartcase=1                          " case-insensitive
+
+"" supertab
+let g:SuperTabDefaultCompletionType='<C-n>'
 
 " ----------------------------------------
 " LEADER & LOCALLEADER
 " ----------------------------------------
-let mapleader=' '
+let mapleader="\<Space>"
 let localleader=','
 
 " ----------------------------------------
 " KEY BINDINGS
 " ----------------------------------------
 "" Insert Mode
-" <esc> remap
-inoremap jk <esc>
+" <Esc> remap
+inoremap jk <Esc>
 
 "" Normal Mode
 " edit/source vimrc
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>rv :source $MYVIMRC<cr>
+nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <Leader>rv :source $MYVIMRC<CR>
+
+" keyboard s-key not working hotfix!
+nnoremap <C-v> s
 
 " toggle hidden characters
-nnoremap <silent> <F3> :set list!<cr>
+nnoremap <silent> <F3> :set list!<CR>
 
 " remove all trailing whitespaces
-nnoremap <silent> <F5> :call strip_trailing_whitespaces#StripTrailingWhitespaces()<cr>
+nnoremap <silent> <F5> :call strip_trailing_whitespaces#StripTrailingWhitespaces()<CR>
 
 " ----------------------------------------
 " PLUGIN KEY BINDINGS
 " ----------------------------------------
 "" undotree
 " toggle undotree
-nnoremap <F4> :UndotreeToggle<cr>
+nnoremap <F4> :UndotreeToggle<CR>
+
+"" vim-easymotion
+" change prefix
+map <Leader> <Plug>(easymotion-prefix)
+" jump to letter
+nmap <Leader><Space> <Plug>(easymotion-overwin-f)
+" jump to lines below
+nmap <Leader>j <Plug>(easymotion-j)
+" jump to lines above
+nmap <Leader>k <Plug>(easymotion-k)
 
 "" fzf
 " find file under current directory
-nnoremap <leader>f :FZF<cr>
+nnoremap <Leader>f :FZF<CR>
 " find file under $HOME directory
-nnoremap <leader>F :FZF ~<cr>
+nnoremap <Leader><S-F> :FZF ~<CR>
 
 " ----------------------------------------
 " ABBREVIATIONS
