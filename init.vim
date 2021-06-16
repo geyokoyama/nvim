@@ -104,7 +104,7 @@ let g:EasyMotion_do_mapping=0                         " disable default mappings
 let g:EasyMotion_smartcase=1                          " case-insensitive
 
 "" supertab
-let g:SuperTabDefaultCompletionType='<C-n>'
+let g:SuperTabDefaultCompletionType='<C-n>'           " top-down cycle instead of bottom-up default
 
 " ----------------------------------------
 " LEADER & LOCALLEADER
@@ -122,10 +122,7 @@ inoremap jk <Esc>
 "" Normal Mode
 " edit/source vimrc
 nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
-nnoremap <Leader>rv :source $MYVIMRC<CR>
-
-" keyboard s-key not working hotfix!
-nnoremap <C-v> s
+nnoremap <Leader>sv :source $MYVIMRC<CR>
 
 " toggle hidden characters
 nnoremap <silent> <F3> :set list!<CR>
@@ -155,6 +152,13 @@ nmap <Leader>k <Plug>(easymotion-k)
 nnoremap <Leader>f :FZF<CR>
 " find file under $HOME directory
 nnoremap <Leader><S-F> :FZF ~<CR>
+
+"" emmet-vim
+let g:user_emmet_leader_key='<C-Space>'               " emmet-vim leader key
+
+"" coc.nvim
+" trigger completion
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
 " ----------------------------------------
 " ABBREVIATIONS
