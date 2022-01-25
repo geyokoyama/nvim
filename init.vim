@@ -79,11 +79,13 @@ Plug 'mattn/emmet-vim'                                          " HTML & CSS sni
 Plug 'raimondi/delimitmate'                                     " automatic closing of brackets
 Plug 'ervandew/supertab'                                        " <tab> to cycle through patterns
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }               " completion engine
+Plug 'tpope/vim-surround'                                       " add surrounding pairs
 
 "" Language
 Plug 'pangloss/vim-javascript'                                  " JavaScript
 Plug 'maxmellon/vim-jsx-pretty'                                 " JSX
 Plug 'kevinoid/vim-jsonc'                                       " JSON
+Plug 'tpope/vim-rails'                                          " ruby rails
 
 call plug#end()
 
