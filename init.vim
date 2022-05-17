@@ -70,6 +70,7 @@ Plug 'vim-airline/vim-airline-themes'                           " status bar the
 Plug 'easymotion/vim-easymotion'                                " easier cursor movement
 Plug 'preservim/nerdcommenter'                                  " easy commenting
 Plug 'justinmk/vim-dirvish'                                     " path navigator
+Plug 'kristijanhusak/vim-dirvish-git'                           " vim-dirvish plugin
 Plug 'tpope/vim-fugitive'                                       " git plugin
 Plug 'mbbill/undotree'                                          " visualize undo branches
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }             " enable fzf in neovim
