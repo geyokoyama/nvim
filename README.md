@@ -63,6 +63,7 @@ require additional setup to configure autocompletion for filetypes*
 |`<Leader>` `r` `v`|source init.vim|
 |`<F3>`|toggle hidden characters|
 |`<F5>`|remove all trailing whitespaces|
+|`<tab>` + `<shift> <tab>`|easier tab switching|
 
 ## Plugin Key Bindings
 
