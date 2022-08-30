@@ -74,6 +74,7 @@ Plug 'kristijanhusak/vim-dirvish-git'                           " vim-dirvish pl
 Plug 'tpope/vim-fugitive'                                       " git plugin
 Plug 'mbbill/undotree'                                          " visualize undo branches
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }             " enable fzf in neovim
+Plug 'ap/vim-css-color'                                         " color preview
 
 "" Code Completion
 Plug 'mattn/emmet-vim'                                          " HTML & CSS snippets
