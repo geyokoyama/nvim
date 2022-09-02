@@ -23,3 +23,9 @@ vim.keymap.set('n', '<F5>', ':call strip_trailing_whitespaces#StripTrailingWhite
 -- easier tab navigation
 vim.keymap.set('n', '<tab>', ':if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>', { silent = true })
 vim.keymap.set('n', '<s-tab>', ':if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>', { silent = true })
+
+-- ------------- --
+-- ABBREVIATIONS --
+-- ------------- --
+vim.cmd[[iabbrev @@ george_y@outlook.com]]
+vim.cmd[[iabbrev comcom https://www.geyokoyama.com/]]

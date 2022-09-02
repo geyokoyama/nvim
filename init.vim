@@ -130,10 +130,4 @@ let g:user_emmet_leader_key='<C-Space>'               " emmet-vim leader key
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-" ----------------------------------------
-" ABBREVIATIONS
-" ----------------------------------------
-iabbrev @@ george_y@outlook.com
-iabbrev comcom https://geyokoyama.github.io
-
 lua require('basic')
