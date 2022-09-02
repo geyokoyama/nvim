@@ -166,7 +166,8 @@ let g:user_emmet_leader_key='<C-Space>'               " emmet-vim leader key
 
 "" coc.nvim
 " trigger completion
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " ----------------------------------------
 " ABBREVIATIONS
