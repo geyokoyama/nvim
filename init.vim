@@ -17,23 +17,6 @@ endif
 " ----------------------------------------
 " EDITOR BEHAVIOR
 " ----------------------------------------
-"" Terminal Aethetics
-set termguicolors         " enable 24-bit color terminal support
-
-"" Coding Awareness
-set number                " display line number
-set expandtab             " tab insert spaces
-set tabstop=2             " # of space characters on tab
-set shiftwidth=2          " # of space characters on indent
-set scrolloff=999         " cursor line is vertically centered
-set linebreak             " prevent wrap inside word
-set lazyredraw            " prevent redrawing screen during macro
-set ignorecase            " not case sensitive
-set smartcase             " override ignorecase when pattern contains uppercase
-set hidden                " prevent loss of buffer history when switching buffers
-set list                  " display hidden characters
-let &showbreak='▶▶▶ '     " hidden character to indicate start of wrapped line
-set listchars=tab:│·,eol:↲,nbsp:␣,trail:•,extends:▶,precedes:◀  " set hidden characters
 
 "" Temporary Files
 " backups
