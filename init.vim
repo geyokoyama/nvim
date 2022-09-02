@@ -1,6 +1,7 @@
 " ****************************************
-" @geyokoyama
-" https://geyokoyama.github.io
+" Author: George E. Yokoayama
+" Repo: https://github.com/geyokoyama/nvim
+" Website: https://www.geyokoyama.com/
 " ****************************************
 
 " ----------------------------------------
