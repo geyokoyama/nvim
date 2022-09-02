@@ -117,28 +117,6 @@ let mapleader="\<Space>"
 let localleader=','
 
 " ----------------------------------------
-" KEY BINDINGS
-" ----------------------------------------
-"" Insert Mode
-" <Esc> remap
-inoremap jk <Esc>
-
-"" Normal Mode
-" edit/source vimrc
-nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
-nnoremap <Leader>sv :source $MYVIMRC<CR>
-
-" toggle hidden characters
-nnoremap <silent> <F3> :set list!<CR>
-
-" remove all trailing whitespaces
-nnoremap <silent> <F5> :call strip_trailing_whitespaces#StripTrailingWhitespaces()<CR>
-
-" easier tab navigation
-nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
-nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
-
-" ----------------------------------------
 " PLUGIN KEY BINDINGS
 " ----------------------------------------
 "" undotree
@@ -174,3 +152,5 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 " ----------------------------------------
 iabbrev @@ george_y@outlook.com
 iabbrev comcom https://geyokoyama.github.io
+
+lua require('basic')
