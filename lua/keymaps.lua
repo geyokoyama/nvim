@@ -8,8 +8,8 @@ vim.keymap.set('i', 'jk', '<Esc>')
 
 -- NORMAL MODE
 -- edit/source vimrc
-vim.keymap.set('n', 'ev', ':vsplit $MYVIMRC<CR>')
-vim.keymap.set('n', 'sv', ':source $MYVIMRC<CR>')
+vim.keymap.set('n', '<Leader>ev', ':vsplit $MYVIMRC<CR>')
+vim.keymap.set('n', '<Leader>sv', ':source $MYVIMRC<CR>')
 
 -- highlight cursor line & column
 vim.keymap.set('n', '<F2>', ':set cursorcolumn!<CR> :set cursorline!<CR>')

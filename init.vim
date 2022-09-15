@@ -49,6 +49,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'rakr/vim-one'                                             " vim-one theme
 Plug 'vim-airline/vim-airline'                                  " improved status bar
 Plug 'vim-airline/vim-airline-themes'                           " status bar theme
+Plug 'lukas-reineke/indent-blankline.nvim'                      " indentation guides
 
 "" Utility
 Plug 'easymotion/vim-easymotion'                                " easier cursor movement
