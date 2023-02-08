@@ -22,30 +22,18 @@ George's personal neovim configuration
 
 ### Requirements
 
-* [node](https://nodejs.org/en/) Note: I use [nvm](https://github.com/nvm-sh/nvm)
-```
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-nvm install node
-```
-* [fzf](https://github.com/junegunn/fzf)
-```
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-```
+* [node](https://nodejs.org/en/) (Used by [coc.nvim](https://github.com/neoclide/coc.nvim))
 
 ### Installation
 
 1. Install [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim).
 2. Run `git clone https://github.com/geyokoyama/nvim.git ~/.config/nvim`.
-3. Start up Neovim with `nvim` and see plugins getting installed by
-[vim-plug](https://github.com/junegunn/vim-plug).
-4. Restart Neovim and you should be good to go!
+3. Start `nvim`. You should see plugins getting installed at this time.
+4. Restart Neovim and you should be good to go.
 
-*Note: [vim-airline](https://github.com/vim-airline/vim-airline) will require
-[powerline
-fonts](https://github.com/vim-airline/vim-airline#integrating-with-powerline-fonts)
-to look nice!*  *Note: [coc.vim](https://github.com/neoclide/coc.nvim) will
-require additional setup to configure autocompletion for filetypes*
+
+* [vim-airline](https://github.com/vim-airline/vim-airline) may require [Nerd Fonts](https://www.nerdfonts.com/) to look nice.
+* [coc.vim](https://github.com/neoclide/coc.nvim) will require additional setups to configure autocompletion for filetypes.
 
 ## Key Bindings
 
