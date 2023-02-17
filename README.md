@@ -1,5 +1,7 @@
 # init.vim
 
+I've moved on to using a [dotfile](https://github.com/geyokoyama/dotfiles/tree/main/.config/nvim) repo to manage my neovim configuration.
+
 George's personal neovim configuration
 
 ## Table of Contents
